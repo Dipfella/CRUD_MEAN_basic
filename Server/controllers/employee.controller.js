@@ -6,7 +6,12 @@ EmployeeController.getEmployees = async (req, res) => {
   res.json(employees);
 };
 EmployeeController.createEmployee = async (req, res) => {
-  const employee = new modelEmployee(req.body);
+  const employee = new modelEmployee({
+    name: req.body.name,
+    role: req.body.role,
+    office: req.body.office,
+    salary: req.body.salary
+  });
   await employee.save();
   res.json({
     status: "Empleado guardado",
