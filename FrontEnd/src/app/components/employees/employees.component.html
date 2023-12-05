@@ -1,1 +1,92 @@
-<p>employees works!</p>
+<div class="container m-5">
+  <div class="row">
+    <div class="col-md-4 col-4">
+      <div class="card" style="width: auto">
+        <div class="card-body">
+          <form
+            class="row g-3"
+            #employeeForm="ngForm"
+            (ngSubmit)="addEmployee(employeeForm)"
+          >
+            <input
+              type="hidden"
+              name="_id"
+              #_id="ngModel"
+              [(ngModel)]="employeeService.selectedEmployee._id"
+            />
+            <div class="col-md-12">
+              <label class="form-label">Name</label>
+              <input
+                class="form-control"
+                type="text"
+                name="name"
+                #name="ngModel"
+                [(ngModel)]="employeeService.selectedEmployee.name"
+                placeholder="Ingresa el nombre del empleado"
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Cargo</label>
+              <input
+                class="form-control"
+                type="text"
+                name="role"
+                #role="ngModel"
+                [(ngModel)]="employeeService.selectedEmployee.role"
+                placeholder="Ingresa el Cargo del empleado"
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Salario</label>
+              <input
+                class="form-control"
+                type="text"
+                name="salary"
+                #salary="ngModel"
+                [(ngModel)]="employeeService.selectedEmployee.salary"
+                placeholder="Ingresa el Salario del empleado"
+              />
+            </div>
+            <div class="col-md-12">
+              <label class="form-label">Oficina</label>
+              <input
+                class="form-control"
+                type="text"
+                name="office"
+                #office="ngModel"
+                [(ngModel)]="employeeService.selectedEmployee.office"
+                placeholder="Ingresa la Oficina del empleado"
+              />
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-8 col-md-8">
+      <table class="table table-hover">
+        <thead class="thead-light">
+          <th scope="col">Nombre</th>
+          <th scope="col">Cargo</th>
+          <th scope="col">Ubicación</th>
+          <th scope="col">Operación</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employeeService.employees">
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.role }}</td>
+            <td>{{ employee.office }}</td>
+            <td>
+              <a (click)="editEmployee(employee)"
+                ><i class="bi bi-pencil-square"></i
+              ></a>
+              <a (click)="deleteEmployee(employee._id)"><i class="bi bi-trash"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+.navbar {
+  background-color: whitesmoke;
+  box-shadow: 0px 0px 10px 10px rgba(0 0 0 / 10%);
+}
+
+.label-navbar {
+  color: black;
+  width: 50%;
+}
+.cont-logos {
+  display: flex;
+}
+.m {
+  background-image: url(../assets/resource/MongoDB.png);
+  height: 4rem;
+  width: 4rem;
+  background-repeat: no-repeat;
+  background-size: 120%;
+  background-position-x: 55%;
+  background-position-y: 45%;
+}
+.e {
+  background-image: url(../assets/resource/express.png);
+  height: 4rem;
+  width: 4rem;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position-x: 55%;
+  background-position-y: 45%;
+}
+.a {
+  background-image: url(../assets/resource/angular.png);
+  height: 4rem;
+  width: 4rem;
+  background-repeat: no-repeat;
+  background-size: 64%;
+  background-position-x: 55%;
+  background-position-y: 45%;
+}
+.n {
+  background-image: url(../assets/resource/node.png);
+  height: 4rem;
+  width: 4rem;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position-x: 55%;
+  background-position-y: 45%;
+}
